@@ -13,7 +13,7 @@ class Oystercard
     @journey = journey
     end
 
-  def topup(amount)
+  def top_up(amount)
     fail "You can't top up as it exceeds the limit" if @balance + amount > MAX_BALANCE
     @balance += amount
   end

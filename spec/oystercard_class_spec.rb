@@ -11,15 +11,15 @@ describe Oystercard do
     end
   end
 
-  describe "#topup" do
+  describe "#top_up" do
     it "allows user to top up" do
-      expect{ subject.topup 1 }.to change{ subject.balance }.by 1
+      expect{ subject.top_up 1 }.to change{ subject.balance }.by 1
     end
 
     it "raises an error when the amount exceeds the limit" do
-      subject.topup(Oystercard::MAX_BALANCE)
+      subject.top_up(Oystercard::MAX_BALANCE)
       message = "You can't top up as it exceeds the limit"
-      expect{ subject.topup 1 }.to raise_error message
+      expect{ subject.top_up 1 }.to raise_error message
     end
   end
 
@@ -44,7 +44,7 @@ describe Oystercard do
    xit 'remembers entry station after touch in' do
      subject.topup(Oystercard::MIN_FARE)
      subject.touch_in(:station1)
-     expect(subject.entry_station).to eq :station1
+     expect(subject.journey).to eq :station1
    end
 
  end
