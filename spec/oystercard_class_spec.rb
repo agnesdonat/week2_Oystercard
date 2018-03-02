@@ -52,7 +52,7 @@ describe Oystercard do
  describe "#touch_out" do
 
   before(:each) do
-    subject.topup(Oystercard::MIN_FARE)
+    subject.top_up(Oystercard::MIN_FARE)
     subject.touch_in(:station1)
   end
 
@@ -82,7 +82,7 @@ describe Oystercard do
 
  describe '#in_journey' do
    it 'it returns in_journey status' do
-     subject.topup(1)
+     subject.top_up(1)
      subject.touch_in(:station1)
      expect(subject.in_journey?).to eq true
    end
